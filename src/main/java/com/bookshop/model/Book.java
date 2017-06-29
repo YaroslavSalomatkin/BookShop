@@ -18,8 +18,8 @@ public class Book {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
-  @Column(name = "book_name")
-  private String bookName;
+  @Column(name = "name")
+  private String name;
 
   @Column(name = "author")
   private String author;
@@ -29,7 +29,7 @@ public class Book {
 
   @Column(name = "genre")
   @NotNull
-  private Genre genre;
+  private String genre;
 
   @Column(name = "price")
   private BigDecimal price;
@@ -37,10 +37,10 @@ public class Book {
   public Book() {
   }
 
-  public Book(int id, String bookName, String author, String description, Genre genre,
+  public Book(int id, String bookName, String author, String description, String genre,
       BigDecimal price) {
     this.id = id;
-    this.bookName = bookName;
+    this.name = bookName;
     this.author = author;
     this.description = description;
     this.genre = genre;
@@ -56,11 +56,11 @@ public class Book {
   }
 
   public String getBookName() {
-    return bookName;
+    return name;
   }
 
   public void setBookName(String bookName) {
-    this.bookName = bookName;
+    this.name = bookName;
   }
 
   public String getAuthor() {
@@ -79,11 +79,11 @@ public class Book {
     this.description = description;
   }
 
-  public Genre getGenre() {
+  public String  getGenre() {
     return genre;
   }
 
-  public void setGenre(Genre genre) {
+  public void setGenre(String genre) {
     this.genre = genre;
   }
 

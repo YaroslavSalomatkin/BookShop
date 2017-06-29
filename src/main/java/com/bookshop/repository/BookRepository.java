@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface BookRepository extends CrudRepository<Book, Integer> {
 
-  public Book findAuthor(String author);
+  Book findByAuthor(String author);
 
-  public Book findBookName(String bookName);
+  Book findByName(String name);
 }

@@ -31,8 +31,8 @@ public class BookService {
   }
 
   public Book addBook(Book book) throws BookAlreadyExistsException {
-    if (bookRepository.findAuthor(book.getAuthor()) == null
-        && bookRepository.findBookName(book.getBookName()) == null) {
+    if (bookRepository.findByAuthor(book.getAuthor()) == null
+        && bookRepository.findByName(book.getBookName()) == null) {
       return bookRepository.save(book);
     } else {
       throw new BookAlreadyExistsException();

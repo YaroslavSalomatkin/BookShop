@@ -20,8 +20,15 @@ public class Order {
 
   @Column(name = "last_name")
   private String lastname;
+
+  @Column(name = "address")
   private String address;
+
+  @Column(name = "amount")
   private int amount;
+
+  @Column(name = "book_id")
+  private int bookId;
 
   public int getId() {
     return id;
@@ -61,5 +68,13 @@ public class Order {
 
   public void setAmount(int amount) {
     this.amount = amount;
+  }
+
+  public int getBookId() {
+    return bookId;
+  }
+
+  public void setBookId(int bookId) {
+    this.bookId = bookId;
   }
 }
